@@ -1,0 +1,26 @@
+{
+  "name": "taskforedited",
+  "version": "1.0.0",
+  "description": "simple project",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vslvslv/TaskForEdited.git"
+  },
+  "author": "vvasilev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vslvslv/TaskForEdited/issues"
+  },
+  "homepage": "https://github.com/vslvslv/TaskForEdited#readme",
+  "dependencies": {
+    "cypress": "^9.6.1",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/support/steps"
+  }
+}
