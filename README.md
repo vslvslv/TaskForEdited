@@ -12,3 +12,8 @@
 
 # Instructions
 
+* Install the dependecies `npm install or yarn install`
+
+* Run the test `npm run test`
+
+* Check the video result produced in `/cypress/videos/`
