@@ -45,16 +45,16 @@ Given('select {string} from Navigation', (option) => {
 
 Given('select {string} section', (option) => cy.contains(option).click())
 
-When('select {string} product', (product) => products.items.mandarinBasel().invoke('show').click())
+When('select {string} product', (product) => products.selectItem(product).invoke('show').click())
 
 When('press Add to shopping cart on Product page', () => {
-    cy.wait(5000)
+    product.waitForPageToFinishLoading()
     product.details.addToBagBtn().click()
 })
 
 When('press Open Shopping bag button on pop-up dialog', () => cy.get('[data-testid="bag.preview.goToFullpage"]').should('be.enabled').click())
 
-When('the following item info should be displayed', (table) => {
+Then('the following item info should be displayed', (table) => {
       let productDetails = table.rowsHash()
       product.details.amount().should('have.text', productDetails.Amount)
       product.details.weight().should('have.text', productDetails.Weight)

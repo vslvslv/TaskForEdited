@@ -6,6 +6,11 @@ class ProductDetailsPage {
         weight: () => cy.get('[data-testid="bag.item.info"] > :nth-child(3)'),
         color: () => cy.get('[data-testid="bag.item.info"] > :nth-child(4)')
     }
+
+    waitForPageToFinishLoading() {
+        cy.intercept('/services/shoppingBags/1/summary').as('shoppingBag')
+        cy.wait('@shoppingBag')
+    }
 }
 
 export default ProductDetailsPage;
